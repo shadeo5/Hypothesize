@@ -1,14 +1,13 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Get Started Below</h2>
-
+    <h2>Get Started Below by Adding a New Goal</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
+  name: 'introduction',
   data () {
     return {
       msg: 'Welcome to Hypothesize'
