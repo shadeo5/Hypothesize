@@ -13,10 +13,9 @@ import GoalsWrapper from './components/Goals-Wrapper'
 
 export default {
   name: 'app',
-  components: {
-    Introduction,
-    GoalsWrapper
-  }
+
+  components: { Introduction, GoalsWrapper}
+  
 }
 </script>
 
