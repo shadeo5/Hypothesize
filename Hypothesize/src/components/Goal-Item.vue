@@ -1,6 +1,6 @@
 <template>
   <li class="goal-item">
-    <span class="goal-item__reorder">...</span><span class="goal-item__title">Title</span><button class="goal-item__deletebtn">delete</button>
+    <span class="goal-item__reorder">...</span><span class="goal-item__title">{{goals.title}}</span><button class="goal-item__deletebtn">delete</button>
   </li>
 </template>
 
@@ -10,13 +10,13 @@
 export default {
   name: 'goalitem',
 
-  // props: ["goals", "index" ],
+  props: ["index", "goals" ],
 
   computed: function(){
     console.log('hi');
   }
 
-};
+}
 
 </script>
 
@@ -41,5 +41,7 @@ export default {
   .goal-item__deletebtn{
     flex-grow: 2;
   }
+
+
 
 </style>

@@ -1,6 +1,10 @@
 <template>
   <ul class="goals-wrapper">
-    <goal-item v:for="goal in goals"></goal-item>
+    <goal-item
+      v-for="( goals, index ) in goals"
+      :goals="goals"
+      :index="index"
+    ></goal-item>
   </ul>
 </template>
 
