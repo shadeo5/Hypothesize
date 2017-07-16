@@ -1,17 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Get Started Below</h2>
-    <button>add goal</button>
+    <h2>Get Started Below by Adding a New Goal</h2>
+    <button @click="addGoal">Add New Goal</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
+  name: 'introduction',
   data () {
     return {
       msg: 'Welcome to Hypothesize'
+    }
+  },
+
+  methods: {
+    addGoal(){
+      this.$store.dispatch( 'addGoal' );
     }
   }
 }
