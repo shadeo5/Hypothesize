@@ -1,6 +1,6 @@
 <template>
   <li class="goal-item">
-    <span class="goal-item__reorder">...</span><span class="goal-item__title">{{goals.title}}</span><button class="goal-item__deletebtn">delete</button>
+    <span class="goal-item__reorder">...</span><span class="goal-item__title">{{goals.title}}</span><button class="goal-item__deletebtn" @click="deleteGoal( $event, index )">delete</button>
   </li>
 </template>
 
@@ -14,6 +14,12 @@ export default {
 
   computed: function(){
     console.log('hi');
+  },
+
+  methods: {
+    deleteGoal(){
+      this.$store.dispatch( 'deleteGoal', this.index );
+    }
   }
 
 }

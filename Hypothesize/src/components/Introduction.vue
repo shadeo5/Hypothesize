@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Get Started Below by Adding a New Goal</h2>
+    <button @click="addGoal">Add New Goal</button>
   </div>
 </template>
 
@@ -11,6 +12,12 @@ export default {
   data () {
     return {
       msg: 'Welcome to Hypothesize'
+    }
+  },
+
+  methods: {
+    addGoal(){
+      this.$store.dispatch( 'addGoal' );
     }
   }
 }

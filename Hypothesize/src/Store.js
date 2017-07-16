@@ -1,13 +1,25 @@
 export default{ //make this data availble
 
   //all properties and data that define our application's state
+  focus :
+  {
+    index: null,
+    title: "Goal Title",
+    hypothesis: [ ]
+  },
+
   state:{
     goals :
     [
       {
         "title" : "Goal 1",
         "tag"   : 'green',
-        "complete" : false
+        "complete" : false,
+        "hypothesis" : [
+          {
+            "test" : "test"
+          }
+        ]
       },
       {
         "title" : "Goal 2",
@@ -20,29 +32,43 @@ export default{ //make this data availble
   // invoked by actions when changes to state object occur
   mutations:{
 
+    //goal options
     renameTitle( state, title ){
       state.goals.title = name;
     },
 
     addGoal( state ){
-      let newGoal = {
+      state.goals.push ({
         "title" : "New Goal",
         "tag"   : 'green',
-        "complete" : false
-      }
+        "complete" : false,
+        "hypothesis" : []
+      })
     },
 
-    deleteGoal ( state ){
-      console.log(this);
+    deleteGoal( state, index ){
+      console.log(index);
+      state.goals.splice( index , 1 );
     }
+
   },
 
   //can call multiple mutations or other actions and validate data before commiting to mutation
   actions:{
 
-    changeGoalTitle({ context, title }){
+    changeGoalTitle( context, title ){
       context.commit( renameTitle, title )
-    }
+    },
+
+    deleteGoal ( context, index ){
+      context.commit( 'deleteGoal', index)
+    },
+
+    addGoal ( context, index ){
+      context.commit( 'addGoal' )
+    },
+
+
 
   }
 }

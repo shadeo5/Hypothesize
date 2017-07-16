@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Get Started Below</h2>
-
+    <button>add goal</button>
   </div>
 </template>
 
